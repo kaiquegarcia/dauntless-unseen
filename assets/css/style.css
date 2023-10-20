@@ -59,11 +59,16 @@ section {
 .flex-item {
     flex-grow: 1;
     box-sizing: border-box;
+    width: 50%;
 }
 
 @media screen and (max-width: 767px) {
     .flex.break-phone {
         flex-direction: column;
+    }
+
+    .flex.break-phone > .flex-item {
+        width: 100%;
     }
 }
 
@@ -90,8 +95,8 @@ select {
 }
 
 textarea {
-    height: 480px;
-    white-space: pre;
+    height: 240px;
+    white-space: break-spaces;
     font-family: sans-serif;
 }
 
@@ -121,7 +126,7 @@ button:hover {
     border-radius: 4px;
     box-sizing: border-box;
     padding: 8px 16px;
-    white-space: pre;
+    white-space: break-spaces;
     font-family: sans-serif;
 }
 
