@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dauntless - Dark Harvest - The Unseen Translator</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <section class="flex break-phone">
+            <form id="translation-input" class="flex-item">
+                <div class="line">
+                    <label>Text to encode/decode</label>
+                    <textarea id="phrase"></textarea>
+                </div>
+                <div class="line">
+                    <label>Action</label>
+                    <select id="action">
+                        <option value="encode">Encode</option>
+                        <option value="decode" selected>Decode</option>
+                    </select>
+                </div>
+                <div class="line">
+                    <button type="submit">Run</button>
+                </div>
+            </form>
+            <div class="flex-item">
+                <label>Result</label>
+                <div id="translation-output">
+                    Run the form to see the result here.
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript" src="assets/js/encoder.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+    </body>
+</html>
