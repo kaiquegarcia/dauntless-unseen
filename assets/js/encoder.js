@@ -1,10 +1,21 @@
 ;(function(w) {
+    if (typeof(String.prototype.isWellFormed) === 'undefined') {
+        String.prototype.isWellFormed = function() {
+            try {
+                encodeURI(this);
+            } catch {
+                return false;
+            }
+
+            return true;
+        }
+    }
+
     const alphabet = {
         "ㅏ": "A",
         "Б": "B",
         "C": "C",
         "𑀘": "C",
-        //'\uD804\uDC18': "C",
         "Δ": "D",
         "Э": "E",
         "Ф": "F",
@@ -13,13 +24,11 @@
         "И": "I",
         "ㅈ": "J",
         "𑀛": "J",
-        //'\uD804\uDC1B': "J",
         "ㅋ": "K",
         "Λ": "L",
         "ㅁ": "M",
         "N": "N",
         "𑀦": "N",
-        //'\uD804\uDC26': "N",
         "Ω": "O",
         "Π": "P",
         "Q": "Q",
