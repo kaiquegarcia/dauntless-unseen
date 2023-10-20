@@ -69,6 +69,10 @@
                 previousUnicode = '';
             }
 
+            if (encodedWord === '') {
+                continue;
+            }
+
             encodedWords.push(encodedWord);
         }
 
@@ -97,6 +101,10 @@
                 previousUnicode = '';
             }
 
+            if (decodedWord === '') {
+                continue;
+            }
+            
             decodedWords.push(decodedWord);
         }
 
