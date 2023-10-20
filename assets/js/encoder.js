@@ -44,9 +44,11 @@
     };
     const decodedLetters = Object.values(alphabet);
     const encodedLetters = Object.keys(alphabet);
+
+    const sanitizePhrase = (phrase) => phrase.replace(/(\s|­)/g, ' ');
     
     const encode = (phrase) => {
-        const words = phrase.toUpperCase().split(' ');
+        const words = sanitizePhrase(phrase).toUpperCase().split(' ');
         let encodedWords = [];
         for (const word of words) {
             let encodedWord = '', previousUnicode = '';
@@ -80,7 +82,7 @@
     };
 
     const decode = (phrase) => {
-        const words = phrase.split(' ');
+        const words = sanitizePhrase(phrase).split(' ');
         let decodedWords = [];
         for (const word of words) {
             let decodedWord = '', previousUnicode = '';
@@ -104,7 +106,7 @@
             if (decodedWord === '') {
                 continue;
             }
-            
+
             decodedWords.push(decodedWord);
         }
 
